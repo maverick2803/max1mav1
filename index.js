@@ -15,7 +15,7 @@ const CONFIG = {
     // API Key Hugging Face langsung di sini
     hfApiKey: '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', // Ganti dengan API key asli kamu
     scheduleFile: './jadwal.json',
-    hfModel: 'microsoft/DialoGPT-medium',
+    hfModel: 'distilbert-base-multilingual-cased',
     personality: `Kamu adalah MAX 1, AI assistant keren seperti JARVIS dari Iron Man tapi versi santai dan friendly. Karaktermu:
     - Cerdas tapi gaul, bukan robot kaku
     - Suka becanda dan pake bahasa anak muda
