@@ -1,0 +1,49 @@
+{
+  "name": "max1-whatsapp-bot",
+  "version": "1.1.0",
+  "description": "MAX 1 - WhatsApp AI Assistant with Natural Conversational Style",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "@huggingface/inference": "^2.8.0",
+    "@whiskeysockets/baileys": "^6.7.8",
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "node-cron": "^3.0.3",
+    "node-fetch": "^3.3.2",
+    "pino": "^9.4.0",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "jarvis",
+    "ai-assistant",
+    "huggingface",
+    "conversational-ai",
+    "scheduler",
+    "reminder"
+  ],
+  "author": "Maverick",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/max1-whatsapp-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/max1-whatsapp-bot/issues"
+  },
+  "homepage": "https://github.com/yourusername/max1-whatsapp-bot#readme"
+}
