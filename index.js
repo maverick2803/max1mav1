@@ -13,7 +13,7 @@ const CONFIG = {
     botName: 'MAX 1',
     adminNumber: '6285183268643@s.whatsapp.net',
     // API Key Hugging Face langsung di sini
-    hfApiKey: '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', // Ganti dengan API key asli kamu
+    hfApiKey: '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', // Ganti dengan API key asli kamu
     scheduleFile: './jadwal.json',
     hfModel: 'microsoft/DialoGPT-medium',
     personality: `Kamu adalah MAX 1, AI assistant keren seperti JARVIS dari Iron Man tapi versi santai dan friendly. Karaktermu:
