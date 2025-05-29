@@ -1,4 +1,3 @@
-
 // index.js - MAX 1 WhatsApp Bot Enhanced (Bahasa Indonesia)
 const { default: makeWASocket, DisconnectReason, useMultiFileAuthState } = require('@whiskeysockets/baileys');
 const { Boom } = require('@hapi/boom');
@@ -13,7 +12,8 @@ const { HfInference } = require('@huggingface/inference');
 const CONFIG = {
     botName: 'MAX 1',
     adminNumber: '6285183268643@s.whatsapp.net',
-    hfApiKey: process.env.HF_API_KEY,
+    // API Key Hugging Face langsung di sini
+    hfApiKey: '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', // Ganti dengan API key asli kamu
     scheduleFile: './jadwal.json',
     hfModel: 'microsoft/DialoGPT-medium',
     personality: `Kamu adalah MAX 1, AI assistant keren seperti JARVIS dari Iron Man tapi versi santai dan friendly. Karaktermu:
@@ -30,8 +30,13 @@ const CONFIG = {
 };
 
 // Validasi API Key
-if (!CONFIG.hfApiKey) {
-    console.error('❌ Error: HF_API_KEY tidak ditemukan di environment variables!');
+if (!CONFIG.hfApiKey || CONFIG.hfApiKey === 'hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx') {
+    console.error('❌ Error: Silakan ganti hfApiKey di CONFIG dengan API key Hugging Face asli kamu!');
+    console.log('💡 Cara mendapatkan API key:');
+    console.log('   1. Daftar di https://huggingface.co/');
+    console.log('   2. Masuk ke Settings > Access Tokens');
+    console.log('   3. Buat token baru dengan role "read"');
+    console.log('   4. Copy token dan ganti di line CONFIG.hfApiKey');
     process.exit(1);
 }
 
@@ -53,7 +58,8 @@ app.get('/', (req, res) => {
         status: 'MAX 1 siap beraksi! 🤖✨',
         uptime: `Udah online ${Math.floor(process.uptime() / 60)} menit`,
         timestamp: new Date().toLocaleString('id-ID'),
-        message: 'Your AI assistant is ready to serve! 🚀'
+        message: 'Your AI assistant is ready to serve! 🚀',
+        apiStatus: CONFIG.hfApiKey ? 'Connected ✅' : 'Not configured ❌'
     });
 });
 
@@ -380,6 +386,7 @@ async function startBot() {
             }
         } else if (connection === 'open') {
             console.log('🤖 MAX 1 Online! Ready to serve, boss! ✨');
+            console.log('🔗 Hugging Face API: Connected!');
             // Setup reminders setelah koneksi berhasil
             setTimeout(() => {
                 setupReminders(sock, CONFIG.adminNumber);
